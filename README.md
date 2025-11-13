@@ -99,13 +99,13 @@ git clone https://github.com/amankumar110/MadeNews_App.git
 - Basic UI screens  
 - Firebase setup  
 - AI story generation flow
-- Auto-refresh for 25 weekly articles 
+- Auto-refresh for 25 weekly articles
+- Public weekly story feed 
 
 ### Upcoming
-- Public weekly story feed  
 - Leaderboard + Aura reactions  
 - Private/public story toggle   
-- Play Store release  
+- Play Store release
 
 ---
 
