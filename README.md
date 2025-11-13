@@ -142,22 +142,35 @@ Open-source for learning and portfolio usage.
 
 ## Preview
 
-### Splash Screen
-![App Splash Screen](splash-screen.jpeg)
+## Preview
 
-### Home Screen
-![App Home Screen](home.jpeg)
+<table>
+  <tr>
+    <td align="center"><strong>Splash Screen</strong></td>
+    <td align="center"><strong>Home Screen</strong></td>
+    <td align="center"><strong>Story Screen</strong></td>
+  </tr>
+  <tr>
+    <td><img src="splash-screen.jpeg" width="260"/></td>
+    <td><img src="home.jpeg" width="260"/></td>
+    <td><img src="story.jpeg" width="260"/></td>
+  </tr>
+</table>
 
-### Story Screen
-![App Story Screen (Dialog Fragments)](story.jpeg)
+<br/>
 
-### User Account Screen
-![App User Account Screen](user.jpeg)
+<table>
+  <tr>
+    <td align="center"><strong>User Account</strong></td>
+    <td align="center"><strong>Login</strong></td>
+    <td align="center"><strong>Signup</strong></td>
+  </tr>
+  <tr>
+    <td><img src="user.jpeg" width="260"/></td>
+    <td><img src="login.jpeg" width="260"/></td>
+    <td><img src="signup.jpeg" width="260"/></td>
+  </tr>
+</table>
 
-### Login Screen
-![App Login Screen](login.jpeg)
-
-### Signup Screen
-![App Signup Screen](signup.jpeg)
 
 
