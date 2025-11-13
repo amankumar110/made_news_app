@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#80000000"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.NewsArticleFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        app:cardBackgroundColor="@color/app_color_background"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="5dp"
+        android:layout_margin="@dimen/spacing_l"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollViewNewsArticle"
+            android:scrollbars="none"
+            android:paddingBottom="@dimen/spacing_m"
+            android:fillViewport="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="@dimen/spacing_m"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true">
+
+                <TextView
+                    android:id="@+id/tv_news_title"
+                    android:layout_marginTop="@dimen/spacing_l"
+                    android:text="Donald Trump Wants Elon Musk to Buy Twitter But Not for the Reason You Think."
+                    style="@style/AppHeadingStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/iv_news_author_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/app_logo" />
+
+                    <TextView
+                        android:id="@+id/tv_news_author_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_xs"
+                        android:text="themadenewscompany" />
+                </LinearLayout>
+
+                <!-- Wrapper for description text and shimmer placeholder -->
+                <FrameLayout
+                    android:id="@+id/description_content_wrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_m">
+
+                    <include
+                        android:id="@+id/shimmer_view_container_description"
+                        layout="@layout/layout_shimmer_placeholder_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_news_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_m"
+                        android:overScrollMode="ifContentScrolls"
+                        android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,"
+                        android:visibility="visible"/>
+
+                </FrameLayout>
+
+                <in.amankumar110.madenewsapp.ui.customviews.ExpandableChipGroup
+                    android:id="@+id/ecg_satire_styles"
+                    android:layout_marginTop="@dimen/spacing_m"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="@dimen/spacing_m"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"/>
+
+                <LinearLayout
+                    android:layout_marginHorizontal="@dimen/spacing_m"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:visibility="gone"
+                        android:id="@+id/btn_remix"
+                        style="@style/AppButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apply Changes" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_publish"
+                        style="@style/AppButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_m"
+                        android:text="Publish Now" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <in.amankumar110.madenewsapp.ui.customviews.FrameProgressView
+            android:id="@+id/frameProgressView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:topLeftRadius="30dp"
+            app:topRightRadius="30dp"
+            android:visibility="gone"
+            app:bottomLeftRadius="30dp"
+            app:bottomRightRadius="30dp"
+            app:strokeColor="@color/app_accent_color"
+            app:strokeWidth="5dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

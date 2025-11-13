@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:background="@android:color/transparent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:background="@color/app_color_politics"
+        android:id="@+id/container"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:maxWidth="150dp"
+            android:lines="3"
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:text="Elon wants to buy Twitter"
+            android:fontFamily="@font/rubik_medium"
+            android:textColor="@color/app_text_secondary"
+            android:textSize="@dimen/text_m"
+            />
+
+        <TextView
+            android:id="@+id/tv_sub_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_s"
+            android:textColor="@color/app_text_secondary"
+            android:text="SubText"
+            android:layout_marginTop="12dp"
+            />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

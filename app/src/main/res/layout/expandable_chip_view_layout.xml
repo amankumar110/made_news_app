@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/app_color_global_diplomat"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/spacing_s"
+        android:paddingHorizontal="@dimen/spacing_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:textSize="@dimen/text_m"
+            android:fontFamily="@font/rubik_medium"
+            style="@style/AppTextViewStyle"
+            android:textColor="@color/app_text_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= "Cyborg"/>
+
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:visibility="visible"
+            android:textSize="@dimen/text_xs"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/app_text_secondary"
+            android:text="An Android Powerful IDE"/>
+
+    </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

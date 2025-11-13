@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        tools:context=".ui.userprofile.UserProfileFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                style="@style/AppTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_m"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:fontFamily="@font/rubik_bold"
+                android:text="UserNAme"
+                android:textSize="@dimen/text_xl" />
+
+            <TextView
+                android:id="@+id/tv_user_description"
+                style="@style/AppTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_m"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:text="A MadeNews Columnist" />
+
+            <TextView
+                android:id="@+id/tv_user_joined_date"
+                style="@style/AppTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_m"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:text="Joined 1st july 2025" />
+
+
+            <TextView
+                android:id="@+id/tv_user_public_stories_title"
+                style="@style/AppTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_m"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:text="Posted Stories"
+                android:textSize="@dimen/text_l" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                android:orientation="vertical"
+                android:id="@+id/rv_user_published_stories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_m"
+                android:layout_marginVertical="@dimen/spacing_s"
+                tools:listitem="@layout/user_published_story_item_layout" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>

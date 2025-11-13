@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="in.amankumar110.madenewsapp.ui.auth.SignUpFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_sign_up" >
+
+        <action
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="false"
+            android:id="@+id/action_signUpFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+        <fragment
+            android:id="@+id/mainFragment"
+            android:name="in.amankumar110.madenewsapp.ui.main.MainFragment"
+            android:label="fragment_main"
+            tools:layout="@layout/fragment_main">
+
+            <action
+                android:id="@+id/action_mainFragment_to_signUpFragment"
+                app:popUpToInclusive="true"
+                app:popUpTo="@id/mainFragment"
+                app:destination="@id/signUpFragment" />
+            <action
+                app:popUpTo="@id/mainFragment"
+                app:popUpToInclusive="true"
+                android:id="@+id/action_mainFragment_to_signInFragment"
+                app:destination="@id/signInFragment" />
+            <action
+                android:id="@+id/action_mainFragment_to_userProfileFragment"
+                app:destination="@id/userProfileFragment"/>
+        </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="in.amankumar110.madenewsapp.ui.auth.SignInFragment"
+        android:label="SignInFragment" >
+        <action
+            android:id="@+id/action_signInFragment_to_mainFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/mainFragment" />
+        <action
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/emailVerificationDialogFragment"
+        android:label="Email Verification Dialog"
+        android:name="in.amankumar110.madenewsapp.ui.auth.EmailVerificationDialogFragment"
+        tools:layout="@layout/fragment_email_verification" />
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="in.amankumar110.madenewsapp.ui.userprofile.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
+
+</navigation>

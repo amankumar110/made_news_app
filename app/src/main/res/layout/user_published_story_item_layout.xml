@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    android:layout_margin="5dp"
+    android:layout_height="200dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/iv_story_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/example"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+            <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/user_published_story_overlay"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_story_image"
+            app:layout_constraintEnd_toEndOf="@+id/iv_story_image"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/iv_story_image"
+            app:layout_constraintTop_toTopOf="@+id/iv_story_image" />
+
+        <TextView
+            android:id="@+id/tv_story_title"
+            android:textSize="@dimen/text_m"
+            android:layout_marginBottom="@dimen/spacing_s"
+            android:paddingHorizontal="@dimen/spacing_s"
+            android:fontFamily="@font/rubik_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="the inexplicabe rise of justin trudeau's sartorial splenfor as a meatphor for canadian politics"
+            style="@style/AppTextViewStyle"
+            android:textColor="@color/app_text_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_story_image"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MadNewsApp" parent="Theme.Material3.DayNight.NoActionBar">
+
+        // Setting the default colors for the app theme.
+        <item name="android:colorBackground">@color/app_color_background</item>
+        <item name="android:textColorPrimary">@color/app_text_primary</item>
+        <item name="android:textColor">@color/app_text_primary</item>
+        <item name="android:fontFamily">@font/rubik</item>
+
+        // Overriding default styles for customized app appearance and design choices.
+        <item name="android:textViewStyle">@style/AppTextViewStyle</item>
+        <item name="android:editTextPreferenceStyle">@style/AppEditTextViewStyle</item>
+        <item name="android:editTextStyle">@style/AppEditTextViewStyle</item>
+        <item name="buttonStyle">@style/AppButtonStyle</item>
+    </style>
+
+    <style name="Theme.MadNewsApp" parent="Base.Theme.MadNewsApp" />
+</resources>

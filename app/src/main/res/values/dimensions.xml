@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="app_screen_padding_top">40dp</dimen>
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_s">8dp</dimen>
+    <dimen name="spacing_m">16dp</dimen>
+    <dimen name="spacing_l">24dp</dimen>
+    <dimen name="spacing_xl">40dp</dimen>
+
+
+    // for custom edit text
+    <dimen name="icon_edit_text_padding">10dp</dimen>
+    <dimen name="icon_edit_text_icon_size">30dp</dimen>
+    <dimen name="icon_edit_text_item_spacing">10sp</dimen>
+    <dimen name="icon_edit_text_size">@dimen/text_s</dimen>
+    <dimen name="icon_edit_text_error_text_size">12sp</dimen>
+
+
+    <dimen name="text_xl">24sp</dimen>
+    <dimen name="text_l">20sp</dimen>
+    <dimen name="text_m">16sp</dimen>
+    <dimen name="text_s">12sp</dimen>
+    <dimen name="text_xs">8sp</dimen>
+
+</resources>

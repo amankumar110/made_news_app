@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="app_color_background">#e9eaec</color>
+    <color name="app_text_primary">#000</color>
+    <color name="app_accent_color">#ffe169</color>
+    <color name="app_color_outline">#404142</color>
+    <color name="app_color_hint">#7D7E81</color>
+    <color name="app_color_error">#ad2831</color>
+    <color name="app_text_secondary">#FFF</color>
+
+    <color name="app_color_politics">#708090</color>
+    <color name="app_color_education">#4CAF50</color>
+    <color name="app_color_aliens">#5C6BC0</color>
+    <color name="app_color_technology">#00BCD4</color>
+    <color name="app_color_conspiracies">#9C27B0</color> <!-- Example: deep purple -->
+
+    <!-- New Satire Style Colors (Night) with app_color_ prefix -->
+    <color name="app_color_nostalgic_uncle">#8B0000</color> <!-- Dark Red: passionate, dramatic "old uncle" vibe -->
+    <color name="app_color_tech_bro_visionary">#006400</color> <!-- Dark Green: growth, "innovation hustle" -->
+    <color name="app_color_trump_style">#00008B</color> <!-- Deep Blue: bold, authoritative -->
+    <color name="app_color_gen_z">#FF1493</color> <!-- Neon Pink: flashy, youthful -->
+    <color name="app_color_global_diplomat">#191970</color> <!-- Midnight Blue: calm, sophisticated -->
+    <color name="app_color_pr_manager">#2F4F4F</color> <!-- Dark Slate Gray: slick, spin-doctor vibe -->
+    <color name="app_color_gossip_aunt">#B22222</color> <!-- Firebrick Red: gossipy, intense -->
+    <color name="app_color_money_mogul">#4B0082</color> <!-- Indigo: luxury, power -->
+    <color name="app_color_hollywood_producer">#483D8B</color> <!-- Dark Slate Blue: showbiz, dramatic -->
+
+    <color name="app_color_shimmer">#A9A9A9</color>
+
+    <color name="color_search_bar_hint">#817D7D</color>
+    <color name="color_black">#000</color>
+</resources>

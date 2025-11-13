@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">MadeNews</string>
+
+    <string name="rewarded_ad_unit_id">ca-app-pub-8896275726186017/2599977050</string>
+
+    // sign up page hints
+    <string name="email_hint">Enter email so we can spam your inbox.</string>
+    <string name="password_hint">Make sure no one is looking.</string>
+    <string name="age_hint">Kids play GTA and FIFA not this.</string>
+    <string name="email_verification_rationale">We’ve launched a top-secret activation link into your inbox. Click it to prove you\'re not a bot, a ghost, or your cat walking on the keyboard. If you cant see it, check your spam folder..</string>
+    <string name="verification_link_already_sent">A verification link was already sent to your email inbox. Use it to verify. Check your spam folder if you can\'t see it.</string>
+
+    <string name="signin_page_heading">Made News, Your Playground</string>
+    <string name="signin_page_sub_heading">Welcome Back, Move Ahead</string>
+    <string name="signin_sign_in_button_text">Lets Do This Again</string>
+    <string name="sigin_sign_up_button_text">Man, I Was Never Here Before</string>
+    <string name="signup_heading">Made News, Your Playground</string>
+    <string name="signup_sub_heading">Join Us and Explore the World of AI</string>
+    <string name="signup_sign_up_button_text">Start Playing</string>
+    <string name="signup_sign_in_button_text">I Know The Rules, Move Aside</string>
+    <string name="empty_search_query">Headline Cannot be Empty</string>
+    <string name="story_publish_success_message">Lazy Story Published Successfully!</string>
+
+    <string name="test_rewarded_ad_unit_id">ca-app-pub-3940256099942544/5224354917</string>
+
+    <string-array name="loading_messages">
+        <item>Spreading Fake News Responsibly…</item>
+        <item>Convincing AI This Headline Makes Sense…</item>
+        <item>Warming Up the Meme Engine…</item>
+        <item>Finding the Punchline, Please Wait…</item>
+        <item>Crafting Another Absurd Reality…</item>
+    </string-array>
+
+    <string-array name="generate_news_loading_messages">
+        <item>Polishing the punchlines…</item>
+        <item>Fact-checking fake facts…</item>
+        <item>Firing up the satire engine…</item>
+        <item>Consulting our imaginary editors…</item>
+        <item>Cooking up controversial comedy…</item>
+    </string-array>
+
+    <string name="free_story_generation_default_message">Out of Generations, Out of Dignity. Let’s Fix One of Those.</string>
+    <string name="free_story_generation_description">You’ve worked hard all your life — for grades, for jobs, for validation. Why stop now? Earn this story like it’s your one shot at literary greatness.</string>
+    <string name="ad_dismissed_without_reward">Ad Must be Completed to Get the Reward</string>
+    <string name="confirm_image">Image Uploaded</string>
+    <string name="yes_please">Yes, Please</string>
+    <string name="image_selected">Image Selected</string>
+    <string name="change_image">Change Image</string>
+    <string name="select_image">Select Image</string>
+    <string name="username_hint">Give Yourself a Nickname</string>
+    <string name="search_bar_input_text">Create an Article or Search a User with @</string>
+    <string name="app_title_playground_text">MadeNews AI Playground</string>
+    <string-array name="free_story_generation_messages">
+        <item>Out of Generations, Out of Dignity. Let’s Fix One of Those.</item>
+        <item>No Tokens, No Problem — Just Morals to Compromise.</item>
+        <item>We Checked Your Balance. It’s a Comedy Show Down There.</item>
+        <item>Your Wallet is Crying. But Don’t Worry, We Monetized That Too.</item>
+        <item>Too Poor to Play? Capitalism Has a Mini-Game for You.</item>
+        <item>Story Generations Cost Money. Luckily, You Cost Less.</item>
+        <item>You’re Spiritually Rich, But That Doesn’t Count Here.</item>
+        <item>Welcome to the Broke Club. Entry Is Free, Like Your Options.</item>
+        <item>Empty Pockets? Fill the Void with Corporate Generosity.</item>
+        <item>Your Free Trial of Prosperity Has Ended. Choose a Survival Method Below.</item>
+    </string-array>
+
+
+</resources>

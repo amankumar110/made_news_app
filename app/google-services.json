@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "947187503344",
+    "project_id": "made-news-app",
+    "storage_bucket": "made-news-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947187503344:android:971861196b8bb3f41a7235",
+        "android_client_info": {
+          "package_name": "in.amankumar110.madenewsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCexxYsHzbKFOH1rouZjOIeq5u3fgjISgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

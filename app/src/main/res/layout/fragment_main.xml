@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="in.amankumar110.madenewsapp.ui.main.MainFragment">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <include
+        android:id="@+id/top_bar"
+        layout="@layout/main_top_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_l"
+        android:layout_marginTop="@dimen/spacing_m"
+        android:id="@+id/search_bar_item_layout"
+        layout="@layout/search_bar_item_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"/>
+
+    <TextView
+        style="@style/AppTextViewStyle"
+        android:id="@+id/weekly_news_articles_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_xl"
+        android:text="MadeNews"
+        android:fontFamily="@font/rubik_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_bar_item_layout"
+        android:layout_marginHorizontal="@dimen/spacing_m"
+        android:layout_marginTop="@dimen/spacing_m"/>
+
+
+    <TextView
+        style="@style/AppTextViewStyle"
+        android:id="@+id/weekly_news_articles_sub_heading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weekly_news_articles_heading"
+        android:layout_marginHorizontal="@dimen/spacing_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Weekly Specials"
+        android:fontFamily="@font/rubik_italic"
+        android:textSize="@dimen/text_m"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:nestedScrollingEnabled="false"
+        android:id="@+id/rv_news_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/spacing_m"
+        android:layout_marginBottom="@dimen/spacing_m"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weekly_news_articles_sub_heading"
+        />
+
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>

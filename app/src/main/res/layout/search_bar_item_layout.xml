@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:background="@drawable/button_background"
+        android:padding="@dimen/spacing_m"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@color/app_accent_color"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:id="@+id/chatInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="@null"
+            android:hint="@string/search_bar_input_text"
+            android:imeOptions="actionGo"
+            android:maxLength="200"
+            android:maxLines="6"
+            android:paddingEnd="@dimen/spacing_s"
+            android:paddingVertical="@dimen/spacing_m"
+            android:paddingStart="@dimen/spacing_m"
+            android:singleLine="false"
+            android:textColorHint="@color/color_search_bar_hint"
+            android:textSize="@dimen/text_s" />
+
+        <ImageView
+            android:id="@+id/btn_search"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_search"
+            app:tint="@color/color_search_bar_hint" />
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
