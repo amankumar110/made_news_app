@@ -142,8 +142,6 @@ Open-source for learning and portfolio usage.
 
 ## Preview
 
-## Preview
-
 <table>
   <tr>
     <td align="center"><strong>Splash Screen</strong></td>
@@ -171,6 +169,11 @@ Open-source for learning and portfolio usage.
     <td><img src="signup.jpeg" width="260"/></td>
   </tr>
 </table>
+
+---
+
+## Download Link:
+https://made-news-server.vercel.app/
 
 
 
