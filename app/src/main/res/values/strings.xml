@@ -48,7 +48,7 @@
     <string name="change_image">Change Image</string>
     <string name="select_image">Select Image</string>
     <string name="username_hint">Give Yourself a Nickname</string>
-    <string name="search_bar_input_text">Create an Article or Search a User with @</string>
+    <string name="search_bar_input_text">Create an Article By Headline</string>
     <string name="app_title_playground_text">MadeNews AI Playground</string>
     <string-array name="free_story_generation_messages">
         <item>Out of Generations, Out of Dignity. Let’s Fix One of Those.</item>

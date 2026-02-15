@@ -106,14 +106,6 @@
                         android:layout_height="wrap_content"
                         android:text="Apply Changes" />
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_publish"
-                        style="@style/AppButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacing_m"
-                        android:text="Publish Now" />
-
                 </LinearLayout>
 
             </LinearLayout>

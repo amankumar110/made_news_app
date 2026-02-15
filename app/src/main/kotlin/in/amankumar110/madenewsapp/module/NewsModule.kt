@@ -6,9 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import `in`.amankumar110.madenewsapp.data.remote.NewsApiService
 import `in`.amankumar110.madenewsapp.data.repository.news.NewsRepositoryImpl
-import `in`.amankumar110.madenewsapp.data.repository.news.StoryRepositoryImpl
 import `in`.amankumar110.madenewsapp.domain.repository.news.NewsRepository
-import `in`.amankumar110.madenewsapp.domain.repository.story.StoryRepository
 import `in`.amankumar110.madenewsapp.utils.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -44,10 +42,5 @@ object NewsModule {
         return NewsRepositoryImpl(newsApiService)
     }
 
-    @Provides
-    @Singleton
-    fun getStoryRepository(): StoryRepository {
-        return StoryRepositoryImpl()
-    }
 
 }

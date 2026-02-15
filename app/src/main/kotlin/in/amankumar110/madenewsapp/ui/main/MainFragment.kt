@@ -19,14 +19,10 @@ import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 import `in`.amankumar110.madenewsapp.R
 import `in`.amankumar110.madenewsapp.databinding.FragmentMainBinding
-import `in`.amankumar110.madenewsapp.domain.models.auth.User
-import `in`.amankumar110.madenewsapp.ui.userprofile.UserProfileFragment.Companion.ARG_USER_JSON
 import `in`.amankumar110.madenewsapp.ui.utils.LoadingFragment
 import `in`.amankumar110.madenewsapp.utils.SpacingItemDecoration
 import `in`.amankumar110.madenewsapp.viewmodel.ad.AdViewModel
-import `in`.amankumar110.madenewsapp.viewmodel.auth.EmailVerificationViewModel
 import `in`.amankumar110.madenewsapp.viewmodel.news.NewsViewModel
-import `in`.amankumar110.madenewsapp.viewmodel.user.UserViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
@@ -34,11 +30,9 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class MainFragment : Fragment() {
 
-    private val emailVerificationViewModel: EmailVerificationViewModel by viewModels()
     private lateinit var binding: FragmentMainBinding
     private val newsViewModel: NewsViewModel by viewModels()
     private val adViewModel: AdViewModel by activityViewModels()
-    private val userViewModel: UserViewModel by viewModels()
     private lateinit var newsCategoryAdapter: NewsCategoryAdapter
     private var pendingArticleQuery: String? = null
     private lateinit var loadingMessages: List<String>
@@ -73,7 +67,6 @@ class MainFragment : Fragment() {
 
         setupLoadingObserver()
         collectNewsViewModelFlows()
-        collectUserSearchFlows()
         setupAdEventsListener()
         setupUI()
         newsViewModel.getWeeklyArticles()
@@ -82,22 +75,14 @@ class MainFragment : Fragment() {
     private fun setupLoadingObserver() {
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                // Combine all loading states from different ViewModels
-                combine(
-                    emailVerificationViewModel.isLoading,
-                    newsViewModel.isLoading,
-                    userViewModel.isLoading
 
-                ) { emailLoading, newsLoading, userLoading ->
-                    when {
-                        emailLoading -> Pair(true, emptyList<String>())
-                        newsLoading -> Pair(true, generateTitleLoadingMessages)
-                        userLoading -> Pair(true, emptyList<String>())
-                        else -> Pair(false, emptyList<String>())
-                    }
-                }.collect { loadingState ->
-                    handleLoadingState(loadingState.first, loadingState.second)
+                newsViewModel.isLoading.collect { isLoading ->
+                    if(isLoading)
+                        handleLoadingState(true, generateTitleLoadingMessages)
+                    else
+                        handleLoadingState(false, emptyList<String>())
                 }
+
             }
         }
     }
@@ -164,6 +149,7 @@ class MainFragment : Fragment() {
         binding.rvNewsCategories.addItemDecoration(
             SpacingItemDecoration(requireContext(), spacingPx, false)
         )
+
         binding.rvNewsCategories.adapter = newsCategoryAdapter
 
         binding.searchBarItemLayout.chatInput.doAfterTextChanged { text ->
@@ -177,28 +163,11 @@ class MainFragment : Fragment() {
         binding.searchBarItemLayout.btnSearch.setOnClickListener {
             val query = binding.searchBarItemLayout.chatInput.text.toString().trim()
             if (query.isNotEmpty()) {
-                if (query.startsWith("@")) {
-                    // Extract text after @ symbol
-                    val userQuery = query.substring(1).trim()
-                    if (userQuery.isNotEmpty()) {
-                        lifecycleScope.launch {
-                            userViewModel.getUserByUserName(userQuery)
-                        }
-                    } else {
-                        Toast.makeText(
-                            requireContext(),
-                            "Please enter a username after @",
-                            Toast.LENGTH_SHORT
-                        )
-                            .show()
-                    }
-                } else {
                     pendingArticleQuery = query // Store the query
                     if (!EarnStoryDialogFragment.isShowing()) EarnStoryDialogFragment.show(
                         childFragmentManager,
                         AdViewModel.AdSource.MAIN
                     )
-                }
             } else {
                 Toast.makeText(requireContext(), R.string.empty_search_query, Toast.LENGTH_SHORT)
                     .show()
@@ -235,33 +204,6 @@ class MainFragment : Fragment() {
         }
     }
 
-    fun collectUserSearchFlows() {
-
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                userViewModel.userEvents.collect {
-                    when (it) { // Ensure 'when' is exhaustive if UserEvents is sealed
-                        is UserViewModel.UserEvents.Success -> showUser(it.user)
-                        is UserViewModel.UserEvents.Error -> {
-                            showToast(it.message)
-                        }
-
-                        else -> Unit
-                    }
-                }
-            }
-        }
-    }
-
-    fun showUser(user: User) {
-        val bundle = Bundle().apply {
-            putString(ARG_USER_JSON, Gson().toJson(user))
-        }
-        val navController = findNavController()
-        if (navController.currentDestination?.id == R.id.mainFragment) {
-            navController.navigate(R.id.action_mainFragment_to_userProfileFragment, bundle)
-        }
-    }
 
     private fun showToast(message: Any) {
         if (!isAdded) return // Prevent Toast if fragment not attached

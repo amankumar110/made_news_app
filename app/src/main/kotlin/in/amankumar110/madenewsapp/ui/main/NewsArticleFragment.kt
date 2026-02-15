@@ -31,7 +31,6 @@ import `in`.amankumar110.madenewsapp.utils.SatireStyle
 import `in`.amankumar110.madenewsapp.utils.TTSManager
 import `in`.amankumar110.madenewsapp.viewmodel.ad.AdViewModel
 import `in`.amankumar110.madenewsapp.viewmodel.news.NewsViewModel
-import `in`.amankumar110.madenewsapp.viewmodel.story.StoryViewModel
 import kotlinx.coroutines.launch
 import java.io.File
 import java.io.FileOutputStream
@@ -46,7 +45,6 @@ class NewsArticleFragment : DialogFragment() {
 
     private lateinit var binding: FragmentNewsArticleBinding
     private lateinit var article: Article // Initialized in onCreate
-    private val storyViewModel: StoryViewModel by viewModels()
     private val newsViewModel: NewsViewModel by viewModels()
     private val adViewModel: AdViewModel by activityViewModels()
     private var currentSelectedSatireTypeId: String? = null
@@ -57,7 +55,8 @@ class NewsArticleFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NORMAL, com.google.android.material.R.style.Theme_MaterialComponents_Dialog)
+        setStyle(STYLE_NORMAL,
+            com.google.android.material.R.style.Theme_MaterialComponents_Dialog)
         isCancelable = true
 
         var articleJson: String? = null
@@ -121,11 +120,9 @@ class NewsArticleFragment : DialogFragment() {
                 }
             }
 
-            binding.btnPublish.visibility = View.VISIBLE
             binding.ecgSatireStyles.visibility = View.VISIBLE
             // updateRemixButtonVisibility will handle btnRemix visibility
         } else {
-            binding.btnPublish.visibility = View.GONE
             binding.ecgSatireStyles.visibility = View.GONE
             binding.btnRemix.visibility = View.GONE
         }
@@ -159,11 +156,12 @@ class NewsArticleFragment : DialogFragment() {
             binding.frameProgressView.playWithTTS(article.content, ttsManager)
         }
 
-        binding.btnPublish.setOnClickListener {
-            UploadImageFragment.show(parentFragmentManager) { uri ->
-                storyViewModel.saveStory(article.title, article.content, uri?.toString())
-            }
-        }
+//
+//        binding.btnPublish.setOnClickListener {
+//            UploadImageFragment.show(parentFragmentManager) { uri ->
+//                storyViewModel.saveStory(article.title, article.content, uri?.toString())
+//            }
+//        }
 
         binding.btnRemix.setOnClickListener {
             ttsManager.stop()
@@ -183,7 +181,6 @@ class NewsArticleFragment : DialogFragment() {
         }
 
         observeRemixFlows()
-        observeViewModel()
         setupAdEventsListener()
     }
 
@@ -214,16 +211,12 @@ class NewsArticleFragment : DialogFragment() {
                             startDescriptionShimmer()
                             binding.ecgSatireStyles.isClickable = false
                             binding.ecgSatireStyles.isEnabled = false
-                            binding.btnPublish.isClickable = false
-                            binding.btnPublish.isEnabled = false
                             binding.btnRemix.isClickable = false
                             binding.btnRemix.isEnabled = false
                         } else {
                             stopDescriptionShimmer()
                             binding.ecgSatireStyles.isClickable = true
                             binding.ecgSatireStyles.isEnabled = true
-                            binding.btnPublish.isClickable = true
-                            binding.btnPublish.isEnabled = true
                             binding.btnRemix.isClickable = true
                             binding.btnRemix.isEnabled = true
                         }
@@ -233,34 +226,6 @@ class NewsArticleFragment : DialogFragment() {
         }
     }
 
-    private fun observeViewModel() {
-        viewLifecycleOwner.lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch {
-                    storyViewModel.isLoading.collect { isLoadingValue ->
-                        if (isLoadingValue && !LoadingFragment.isShowing(childFragmentManager)) {
-                            LoadingFragment.show(childFragmentManager)
-                        } else if (!isLoadingValue && LoadingFragment.isShowing(childFragmentManager)) {
-                            LoadingFragment.hide(childFragmentManager)
-                        }
-                    }
-                }
-
-                launch {
-                    storyViewModel.storyEvents.collect { event ->
-                        when (event) {
-                            is StoryViewModel.StoryEvent.Error -> handleStoryPublishError(event.message)
-                            is StoryViewModel.StoryEvent.SaveSuccess -> handleStoryPublishSuccess(
-                                event.message
-                            )
-
-                            else -> Unit
-                        }
-                    }
-                }
-            }
-        }
-    }
 
     fun setupAdEventsListener() {
         lifecycleScope.launch {
@@ -406,16 +371,6 @@ class NewsArticleFragment : DialogFragment() {
             }
             return newsArticleFragmentInstance?.let { it.isAdded && it.isVisible } == true
         }
-    }
-
-    fun getDefaultImageUri(context: Context, drawableResId: Int): Uri {
-        val drawable = ContextCompat.getDrawable(context, drawableResId)!!
-        val bitmap = (drawable as BitmapDrawable).bitmap
-        val file = File(context.cacheDir, "default_image.png")
-        FileOutputStream(file).use { out ->
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)
-        }
-        return FileProvider.getUriForFile(context, "${context.packageName}.provider", file)
     }
 
     private fun startDescriptionShimmer() {
